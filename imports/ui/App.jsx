@@ -3,7 +3,12 @@ import { createContainer } from 'meteor/react-meteor-data';
  
 import { Friends } from '../api/friends.js'; 
  
+/*
+// COMPONENTS
+*/
 import Friend from './Friend.jsx';
+import Abide from './components/Abide.jsx';
+import Button from './components/Button.jsx';
  
 // App component - represents the whole app
 class App extends Component {
@@ -19,7 +24,7 @@ class App extends Component {
         <header>
           <h1>Friends</h1>
         </header>
- 
+        <Button text="Hello" />
         <ul>
           {this.renderFriends()}
         </ul>
