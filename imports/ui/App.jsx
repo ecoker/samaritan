@@ -25,6 +25,7 @@ class App extends Component {
           <h1>Friends</h1>
           <p>Howdy, Jessie!</p>
         </header>
+        <Abide />
         <Button text="Hello" />
         <ul>
           {this.renderFriends()}
