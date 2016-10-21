@@ -23,6 +23,7 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>Friends</h1>
+          <p>Howdy, Jessie!</p>
         </header>
         <Button text="Hello" />
         <ul>
