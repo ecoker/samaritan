@@ -29,7 +29,6 @@ class App extends Component {
       <div className="container">
         <Header />
         <Abide />
-        <Button text="Hello" />
         <ul>
           {this.renderFriends()}
         </ul>

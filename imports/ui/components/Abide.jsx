@@ -10,7 +10,6 @@ export default class Abide extends Component {
         var el = ev.target;
         setTimeout(function(){
             if ($(el).find('[data-invalid]').length == 0) {
-                console.log( GetFormArray(el) );
                 var formObject = GetFormObject(el);
                 Friends.insert({ firstName: formObject.firstName, lastName: formObject.lastName, createdAt: new Date() });
             }
@@ -37,7 +36,7 @@ export default class Abide extends Component {
                     </label>
                     <small className="error">An email address is required.</small>
                 </div>
-                <button type="submit">Submit</button>
+                <button className="button" type="submit">Submit</button>
             </form>
         );
     }
