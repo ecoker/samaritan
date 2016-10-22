@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
- 
+import { Link } from 'react-router';
+
+
 export default class Header extends Component {
   render() {
     return (
@@ -7,17 +9,10 @@ export default class Header extends Component {
             <div className="row">
                 <div className="top-bar-left">
                     <ul className="dropdown menu" data-dropdown-menu>
-                    <li className="menu-text">Yeti Store</li>
-                    <li className="has-submenu">
-                        <a href="#">One</a>
-                        <ul className="submenu menu vertical" data-submenu>
-                        <li><a href="#">One</a></li>
-                        <li><a href="#">Two</a></li>
-                        <li><a href="#">Three</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
+                        <li className="menu-text">Yeti Store</li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="about">About</Link></li>
+                        <li><Link to="nomatch">No Match</Link></li>
                     </ul>
                 </div>
                 <div className="top-bar-right">

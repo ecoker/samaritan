@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
-import { Friends } from '../../api/friends.js';
+import { Friends } from './../../api/friends.js';
  
-import { GetFormArray, GetFormObject } from '../services/helpers.js';
+import { GetFormArray, GetFormObject } from './../../api/services/helpers.js';
 
 export default class Abide extends Component {
     handleSubmit(ev){

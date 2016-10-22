@@ -1,23 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
  
-import { Friends } from '../api/friends.js'; 
+import { Friends } from './../../api/friends.js'; 
 
 /*
 // TEMPLATE SECTIONS
 */
-import Header from './template/Header.jsx';
-import Footer from './template/Footer.jsx';
+import Header from './../template/Header.jsx';
+import Footer from './../template/Footer.jsx';
 
 /*
 // COMPONENTS
 */
-import Friend from './Friend.jsx';
-import Abide from './components/Abide.jsx';
-import Button from './components/Button.jsx';
+import Friend from './../Friend.jsx';
+import Abide from './../components/Abide.jsx';
+import Button from './../components/Button.jsx';
  
-// App component - represents the whole app
-class App extends Component {
+class Form extends Component {
   renderFriends() {
     return this.props.friends.map((friend, i) => (
       <Friend key={`friend-${i}`} { ...friend } />
@@ -28,17 +27,19 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        <Abide />
-        <ul>
-          {this.renderFriends()}
-        </ul>
+        <div className="row column">
+          <Abide />
+          <ul>
+            {this.renderFriends()}
+          </ul>
+        </div>
         <Footer />
       </div>
     );
   }
 }
 
-App.propTypes = {
+Form.propTypes = {
   friends: PropTypes.array.isRequired,
 };
  
@@ -46,4 +47,4 @@ export default createContainer(() => {
   return {
     friends: Friends.find({}).fetch(),
   };
-}, App);
+}, Form);

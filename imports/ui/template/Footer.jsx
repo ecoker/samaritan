@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
- 
+import { Link } from 'react-router'; 
+
 export default class Footer extends Component {
   render() {
     return (
@@ -7,9 +8,9 @@ export default class Footer extends Component {
             <hr />
             <ul className="menu">
                 <li>Yeti Store</li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="about">About</Link></li>
+                <li><Link to="nomatch">No Match</Link></li>
                 <li className="float-right">Copyright 2016</li>
             </ul>
         </div>
