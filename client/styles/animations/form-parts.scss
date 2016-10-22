@@ -58,6 +58,13 @@ $pageAnimationBoxShadow: -4px 0px 10px rgba(0,0,0,.1);
     flex-flow:column;
 }
 
+.form-part {
+    display:none;
+    &.active, &.leave {
+        display:block;
+    }
+}
+
 .active.enter {
     animation:enterFromRight $animationTiming $animationEasing forwards;
     order:2;

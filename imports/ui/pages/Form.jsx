@@ -20,6 +20,10 @@ import MilitaryService from './../components/form/MilitaryService.jsx';
 import IndividualOrFamily from './../components/form/IndividualOrFamily.jsx';
 
 class Form extends Component {
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
   componentDidMount(){
     var $firstFormPart = $('.form-part').first();
     var firstId = $firstFormPart.attr('id');
