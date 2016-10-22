@@ -34,9 +34,7 @@ export default class ClientFormPart extends Component {
               var formObject = GetFormObject(el);
               console.log('Current form object', formObject);
               _this.handleNext(el);
-              _this.props.handleStateChange( formObject );
-              // SUBMIT TO DB
-              // Clients.insert({ firstName: formObject.firstName, lastName: formObject.lastName, createdAt: new Date() });    
+              _this.props.handleStateChange( formObject, (_this.props.submit || false) );    
           } else {
             console.log('Form not valid');
           }

@@ -23,6 +23,8 @@ class Form extends Component {
   constructor(props){
     super(props);
     this.state = {};
+    this.handleStateFormStateChange = this.handleStateFormStateChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount(){
     var $firstFormPart = $('.form-part').first();
@@ -33,26 +35,21 @@ class Form extends Component {
     } else {
       window.location.hash = '';
     }
-    this.handleStateFormStateChange = this.handleStateFormStateChange.bind(this);
   }
-  handleStateFormStateChange(o) {
+  handleStateFormStateChange(o, submitToDatabase=false) {
     // KEEP A STATE AT THE PARENT. THIS IS WHAT WILL GO TO THE DB
-    console.log('Current State:', this.state);
-    console.log('Updates:', o );
     this.setState( o );
+    if (submitToDatabase) {
+      var sendToServer = {
+        ...this.state,
+        ...o
+      };
+      Clients.insert( sendToServer );
+    }
   }
   handleSubmit(ev){
-      ev.preventDefault();
-      var el = ev.target;
-      setTimeout(function(){
-          if ($(el).find('[data-invalid]').length == 0 ) {
-              var formObject = GetFormObject(el);
-              console.log('Current form object', formObject);
-              // Clients.insert({ firstName: formObject.firstName, lastName: formObject.lastName, createdAt: new Date() });    
-          } else {
-            console.log('Form not valid');
-          }
-      }, 200);
+      if (typeof ev !== 'undefined') ev.preventDefault();
+      console.log('send to server:', this.state);
   }
  
   render() {
@@ -61,10 +58,7 @@ class Form extends Component {
         <Header />
         <ClientFormNavigation />
         <div id="form-parts">
-          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="needs" content={ Needs } additionalClasses="active" />
-          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="basic-info" content={ BasicInfo } />
-          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="military-service" content={ MilitaryService } />
-          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="individual-or-family" content={ IndividualOrFamily } submit={ true } />
+          <ClientFormPart additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="individual-or-family" content={ IndividualOrFamily } submit={ true } />
         </div>
         <Footer />
       </div>
@@ -78,13 +72,12 @@ export default createContainer(() => {
   return {};
 }, Form);
 
-
 // Form.propTypes = {
 //   clients: PropTypes.array.isRequired,
 // };
  
 // export default createContainer(() => {
 //   return {
-//     Clients: Clients.find({}).fetch(),
+//     clients: Clients.find({}).fetch(),
 //   };
 // }, Form);
