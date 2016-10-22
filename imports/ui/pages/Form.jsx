@@ -38,15 +38,12 @@ class Form extends Component {
   }
   handleStateFormStateChange(o, submitToDatabase=false) {
     // KEEP A STATE AT THE PARENT. THIS IS WHAT WILL GO TO THE DB
-    console.log('Current State:', this.state);
-    console.log('Updates:', o );
     this.setState( o );
     if (submitToDatabase) {
       var sendToServer = {
         ...this.state,
         ...o
       };
-      console.log('for the server:', sendToServer);
       Clients.insert( sendToServer );
     }
   }
@@ -56,7 +53,6 @@ class Form extends Component {
   }
  
   render() {
-    console.log( this.props.clients );
     return (
       <div className="container">
         <Header />
@@ -70,12 +66,18 @@ class Form extends Component {
   }
 }
 
-Form.propTypes = {
-  clients: PropTypes.array.isRequired,
-};
+Form.propTypes = {};
  
 export default createContainer(() => {
-  return {
-    clients: Clients.find({}).fetch(),
-  };
+  return {};
 }, Form);
+
+// Form.propTypes = {
+//   clients: PropTypes.array.isRequired,
+// };
+ 
+// export default createContainer(() => {
+//   return {
+//     clients: Clients.find({}).fetch(),
+//   };
+// }, Form);
