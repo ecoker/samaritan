@@ -33,6 +33,15 @@ $pageAnimationBoxShadow: -4px 0px 10px rgba(0,0,0,.1);
     }
 }
 
+@keyframes leaveRight {
+    0% {
+        transform:translate(0,0);
+    }
+    100% {
+        transform:translate(100vw,0);
+    }
+}
+
 @keyframes shiftLeft {
     0% {
         transform:translate(0,0);
@@ -69,7 +78,9 @@ $pageAnimationBoxShadow: -4px 0px 10px rgba(0,0,0,.1);
     animation:enterFromRight $animationTiming $animationEasing forwards;
     order:2;
     z-index:2;
-    max-width:100vw; 
+    max-width:100vw;
+    background:white;
+    box-shadow:0 0 6px rgba(0,0,0,.25); 
 }
 
 .active.leave {
