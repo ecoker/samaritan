@@ -1,0 +1,10 @@
+.form-part {
+    display:none;
+    &.active, &.leave {
+        display:block;
+    }
+}
+
+.breadcrumbs.form-navigation {
+    margin-top:2em;
+}
