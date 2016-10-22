@@ -2,7 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
  
 import { Friends } from '../api/friends.js'; 
- 
+
+/*
+// TEMPLATE SECTIONS
+*/
+import Header from './template/Header.jsx';
+import Footer from './template/Footer.jsx';
+
 /*
 // COMPONENTS
 */
@@ -21,15 +27,13 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <header>
-          <h1>Friends</h1>
-          <p>Howdy, Jessie!</p>
-        </header>
+        <Header />
         <Abide />
         <Button text="Hello" />
         <ul>
           {this.renderFriends()}
         </ul>
+        <Footer />
       </div>
     );
   }
