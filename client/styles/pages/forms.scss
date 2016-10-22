@@ -36,3 +36,27 @@
 .screen1 :checked + label path {
     stroke:#333;
 }
+
+
+.screen2  {
+   text-align:left;
+}
+
+.photoGroup {
+   display:none;
+}
+
+.screen2 .photoGroup {
+   text-align:center;
+}
+.screen2 .photoGroup path {
+   fill: #eee;
+}
+
+.screen2 .photoGroup:hover {
+   fill:#aaa;
+}
+.screen2 .photoGroup input {
+   position:absolute;
+   visibility:hidden;
+}

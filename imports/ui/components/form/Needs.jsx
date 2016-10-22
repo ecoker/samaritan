@@ -4,7 +4,7 @@ export default class Needs extends Component {
   render() {
     return (
         <div>
-            <h2 class="coach">
+            <h2 className="coach">
             "What can I help you with?"
             </h2>
             <section className="screen1">                
