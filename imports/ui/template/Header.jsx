@@ -9,7 +9,7 @@ export default class Header extends Component {
             <div className="row">
                 <div className="top-bar-left">
                     <ul className="dropdown menu" data-dropdown-menu>
-                        <li className="menu-text">Yeti Store</li>
+                        <li className="menu-text">Samaritan</li>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="about">About</Link></li>
                         <li><Link to="nomatch">No Match</Link></li>
