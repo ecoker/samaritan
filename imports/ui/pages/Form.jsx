@@ -16,8 +16,8 @@ import ClientFormPart from './../components/ClientFormPart.jsx';
 /* FORM PARTS ---- */
 import Needs from './../components/form/Needs.jsx';
 import BasicInfo from './../components/form/BasicInfo.jsx';
-// import MilitaryService from './../components/form/MilitaryService.jsx';
-// import IndividualOrFamily from './../components/form/IndividualOrFamily.jsx';
+import MilitaryService from './../components/form/MilitaryService.jsx';
+import IndividualOrFamily from './../components/form/IndividualOrFamily.jsx';
 
 class Form extends Component {
   constructor(props){
