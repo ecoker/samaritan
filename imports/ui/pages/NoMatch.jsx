@@ -13,7 +13,7 @@ export default class NoMatch extends Component {
       <div className="container">
         <Header />
         <div className="row column">
-          <h1>About</h1>
+          <h1>No Match</h1>
         </div>
         <Footer />
       </div>
