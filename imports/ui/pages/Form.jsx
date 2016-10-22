@@ -58,6 +58,9 @@ class Form extends Component {
         <Header />
         <ClientFormNavigation />
         <div id="form-parts">
+          <ClientFormPart additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="Needs" content={ Needs } submit={ true } />
+          <ClientFormPart additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="BasicInfo" content={ BasicInfo } submit={ true } />
+          <ClientFormPart additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="MilitaryService" content={ MilitaryService } submit={ true } />
           <ClientFormPart additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="individual-or-family" content={ IndividualOrFamily } submit={ true } />
         </div>
         <Footer />
