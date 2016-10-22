@@ -1,3 +1,38 @@
 .breadcrumbs.form-navigation {
     margin-top:2em;
 }
+
+.screen1 svg {
+   display:block;
+   width:100%;
+   max-height:200px;
+}
+
+.screen1 .needGroup {
+   color:#999;
+}
+
+.screen1 .needGroup path {
+   stroke:#cccccc;
+   fill:#f1f1f1;
+}
+
+.screen1 {
+   display:flex;
+   flex-wrap:wrap;
+   justify-content: center;
+   padding-bottom:4em;
+}
+.screen1 [type="checkbox"] {
+    position:absolute;
+    visibility:hidden;
+}
+.screen1 .needGroup{
+   width:25%;
+   margin:1em .5em;
+   
+}
+
+.screen1 :checked + label path {
+    stroke:#333;
+}
