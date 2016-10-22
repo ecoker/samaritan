@@ -12,13 +12,8 @@ export default class Header extends Component {
                         <li className="menu-text">Samaritan</li>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="about">About</Link></li>
+                        <li><Link to="clients">Clients</Link></li>
                         <li><Link to="nomatch">No Match</Link></li>
-                    </ul>
-                </div>
-                <div className="top-bar-right">
-                    <ul className="menu">
-                    <li><input type="search" placeholder="Search" /></li>
-                    <li><button type="button" className="button">Search</button></li>
                     </ul>
                 </div>
             </div>
