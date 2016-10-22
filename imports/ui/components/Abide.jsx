@@ -9,11 +9,11 @@ export default class Abide extends Component {
         ev.preventDefault();
         var el = ev.target;
         setTimeout(function(){
-            if ($(el).find('[data-invalid]').length == 0) {
+            if ($(el).find('[data-invalid]').length == 0 ) {
                 var formObject = GetFormObject(el);
-                Friends.insert({ firstName: formObject.firstName, lastName: formObject.lastName, createdAt: new Date() });
+                Friends.insert({ firstName: formObject.firstName, lastName: formObject.lastName, createdAt: new Date() });    
             }
-        }, 150);
+        }, 200);
     }
     render() {
         return (
