@@ -50,9 +50,9 @@ export default class ClientFormPart extends Component {
             <div className="row column">
                 {
                     this.props.submit ? (
-                        <button className="button">Submit</button>
+                        <button className="button expanded">Submit</button>
                     ) : (
-                        <button className="button">Continue</button>
+                        <button className="button expanded">Continue</button>
                     )
                 }
             </div>

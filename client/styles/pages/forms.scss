@@ -1,3 +1,73 @@
+
+.coach, .instructions, .screen1 {
+    text-align:center;
+}
+.coach {
+    font-size:1.8em;
+    margin:6vh 0;
+} 
+.instructions {
+    font-size:1em
+}
 .breadcrumbs.form-navigation {
     margin-top:2em;
+}
+
+.screen1 svg {
+   display:block;
+   width:100%;
+   max-height:200px;
+}
+
+.screen1 .needGroup {
+   color:#999;
+}
+
+.screen1 .needGroup path {
+   stroke:#cccccc;
+   fill:#f1f1f1;
+}
+
+.screen1 {
+   display:flex;
+   flex-wrap:wrap;
+   justify-content: center;
+   padding-bottom:4em;
+}
+.screen1 [type="checkbox"] {
+    position:absolute;
+    visibility:hidden;
+}
+.screen1 .needGroup{
+   width:25%;
+   margin:1em .5em;
+   
+}
+
+.screen1 :checked + label path {
+    stroke:#333;
+}
+
+
+.screen2  {
+   text-align:left;
+}
+
+.photoGroup {
+   display:none;
+}
+
+.screen2 .photoGroup {
+   text-align:center;
+}
+.screen2 .photoGroup path {
+   fill: #eee;
+}
+
+.screen2 .photoGroup:hover {
+   fill:#aaa;
+}
+.screen2 .photoGroup input {
+   position:absolute;
+   visibility:hidden;
 }
