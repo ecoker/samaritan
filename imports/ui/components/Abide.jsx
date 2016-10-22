@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+
+import { Friends } from '../../api/friends.js';
  
 import { GetFormArray, GetFormObject } from '../services/helpers.js';
 
@@ -9,7 +11,8 @@ export default class Abide extends Component {
         setTimeout(function(){
             if ($(el).find('[data-invalid]').length == 0) {
                 console.log( GetFormArray(el) );
-                console.log( GetFormObject(el) );
+                var formObject = GetFormObject(el);
+                Friends.insert({ firstName: formObject.firstName, lastName: formObject.lastName, createdAt: new Date() });
             }
         }, 150);
     }
@@ -17,8 +20,14 @@ export default class Abide extends Component {
         return (
             <form data-abide noValidate onSubmit={ this.handleSubmit }>
                 <div className="name-field">
-                    <label>Your name <small>required</small>
-                    <input name="name" type="text" required pattern="[a-zA-Z]+" />
+                    <label>First Name <small>required</small>
+                    <input name="firstName" type="text" required pattern="[a-zA-Z]+" />
+                    </label>
+                    <small className="error">Name is required and must be a string.</small>
+                </div>
+                <div className="name-field">
+                    <label>Last Name <small>required</small>
+                    <input name="lastName" type="text" required pattern="[a-zA-Z]+" />
                     </label>
                     <small className="error">Name is required and must be a string.</small>
                 </div>
