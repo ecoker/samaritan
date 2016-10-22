@@ -57,10 +57,10 @@ class Form extends Component {
         <Header />
         <ClientFormNavigation />
         <div id="form-parts">
-          <ClientFormPart handleStateChange={ handleStateFormStateChange } id="needs" content={ Needs } additionalClasses="active" />
-          <ClientFormPart handleStateChange={ handleStateFormStateChange } id="basic-info" content={ BasicInfo } />
-          <ClientFormPart handleStateChange={ handleStateFormStateChange } id="military-service" content={ MilitaryService } />
-          <ClientFormPart handleStateChange={ handleStateFormStateChange } id="individual-or-family" content={ IndividualOrFamily } submit={ true } />
+          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="needs" content={ Needs } additionalClasses="active" />
+          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="basic-info" content={ BasicInfo } />
+          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="military-service" content={ MilitaryService } />
+          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="individual-or-family" content={ IndividualOrFamily } submit={ true } />
         </div>
         <Footer />
       </div>

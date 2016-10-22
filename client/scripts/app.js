@@ -10,13 +10,10 @@ $(document).ready(function(){
    $(window).bind('hashchange', function() {
        var $activeEl = $( window.location.hash );
        if ($activeEl.length > 0) {
-           console.log(visitedHash, visitedHash.indexOf(window.location.hash));
            if (visitedHash.indexOf( window.location.hash ) > -1) {
-                console.log('VISITED');
                 $('body').addClass('back');
                 visitedHash = visitedHash.slice(0, visitedHash.indexOf('#military-service'))
             } else {
-                console.log('NOT VISITED');
                 $('body').removeClass('back');
                 visitedHash.push( window.location.hash );
            }
