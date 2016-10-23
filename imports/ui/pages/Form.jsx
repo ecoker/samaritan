@@ -49,7 +49,7 @@ class Form extends Component {
       };
       Clients.insert( sendToServer );
     }
-  }
+  };
   
   handleSwitch(switchObject, el) {
     this.setState( switchObject );
@@ -86,7 +86,7 @@ class Form extends Component {
       </div>
     );
   }
-}
+};
 
 Form.propTypes = {};
  
