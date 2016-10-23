@@ -15,7 +15,20 @@ class Home extends Component {
     super(props);
     this.state = {};
   }
- 
+   handleSubmit(ev){
+    ev.preventDefault();
+    var el = ev.target;
+    console.log(ev);
+    var _this = this;
+    setTimeout(function(){
+          if ($(el).find('[data-invalid]').length == 0 ) {
+              window.location = "/register"; 
+          } else {
+            console.log('Form not valid');
+          }
+      }, 200);
+
+  }
   render() {
     return (
       <div className="container home">
@@ -34,12 +47,12 @@ class Home extends Component {
                 <h1>You can be the Good Samaritan</h1>
                 <section className="signup">
                   <h3>Get started today!</h3>
-                  <form>
+                  <form data-abide onSubmit={ this.handleSubmit }>
                     <p>Enter your email address associated with your organization</p>
                     <label htmlFor="email">
                       Email
-                      <input type="email" name="email" />
-                      <a href="" className="button expanded">Get Started</a>
+                      <input type="email" name="email" pattern="^[\S]+@(mercy.net|slpl.org|slps.org|slmpd.org|stpatrickcenter.org)$" />
+                      <button href="" className="button expanded">Get Started</button>
                     </label>
                   </form>
                 </section>
