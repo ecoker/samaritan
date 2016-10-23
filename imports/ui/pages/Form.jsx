@@ -78,8 +78,9 @@ class Form extends Component {
         ...this.state,
         ...o
       };
-      var newClient = Clients.insert( sendToServer );
-      console.log( newClient );
+      var newClientId = Clients.insert( sendToServer );
+      console.log( newClientId );
+      window.location = `/clients/shelters/${newClientId}`;
     }
   };
   
