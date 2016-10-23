@@ -6,7 +6,6 @@ import { Shelters } from './../../api/shelters.js';
 class ClientShelters extends Component {
   constructor(props){
       super(props);
-      console.log('IN CLIENT SHELTERS', props);
       this.renderShelters = this.renderShelters.bind(this);
   }
   cleanString(str) {
@@ -18,12 +17,20 @@ class ClientShelters extends Component {
   }
   renderShelters(){
     if (this.props.matchedShelters) {
-        console.log('in shelters', this.props.matchedShelters );
         return this.props.matchedShelters.map(function(shelter){
             return (
-                <tr>
-                    <td>{ shelter.resource }</td>
-                </tr>
+                <div className="client-shelter">
+                    <section className="details">
+                        <h3>{ shelter.resource }</h3>
+                        <address>
+                            { shelter.address }<br />
+                            { shelter.contactp1 }
+                        </address>
+                    </section>
+                    <section className="phone">
+                        Phone Icon
+                    </section>
+                </div>
             );
         });
     }
@@ -36,11 +43,9 @@ class ClientShelters extends Component {
   }
   render() {
       return (
-        <table>
-            <tbody>
-                { this.renderShelters() }
-            </tbody>
-        </table>
+        <div className="client-shelter-wrapper">
+            { this.renderShelters() }
+        </div>
     );
   }
 };

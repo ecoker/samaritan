@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
  
 import { GetFormObject } from './../../api/services/helpers.js';
 
+import BackArrow from './../svg/backArrow.jsx';
+
 export default class ClientFormPart extends Component {
   constructor(props){
       super(props);
@@ -25,6 +27,10 @@ export default class ClientFormPart extends Component {
         }
     }
   }
+  handleBackClick(ev){
+      ev.preventDefault();
+      window.history.back();
+  }
   handleSubmit(ev){
     ev.preventDefault();
     var el = ev.target;
@@ -46,6 +52,7 @@ export default class ClientFormPart extends Component {
     return (
         <form id={ this.props.id } className={`form-part ${ this.props.additionalClasses || '' }`} data-abide noValidate onSubmit={ this.handleSubmit }>
             <div className="form-part-header">
+                <a className="back-arrow-button" href="#" onClick={ this.handleBackClick }>{ BackArrow() }</a>
                 <p>Section {this.props.section}</p>
             </div>
             <div className="row column">

@@ -33,19 +33,12 @@ class ShelterPage extends Component {
   render() {
     return (
         <div className="container">
-            <Header />
+            <div className="form-part-header">
+                <a className="done-button" href="#" onClick={ this.handleDoneClick }>Done</a>
+                <p>Section {this.props.section}</p>
+            </div>
             <div className="row column">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Financial Need</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { this.renderClientShelters() }
-                    </tbody>
-                </table>
+                { this.renderClientShelters() }
             </div>
             <Footer />
         </div>
@@ -59,6 +52,6 @@ ShelterPage.propTypes = {
  
 export default createContainer((props) => {
     return {
-    client: Clients.find({_id:'RZETCREhrxAKY46JP'}).fetch()
+    client: Clients.find({_id:props.params.id}).fetch()
   };
 }, ShelterPage);

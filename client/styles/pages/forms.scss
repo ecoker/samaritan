@@ -145,3 +145,23 @@
         }
     }
 }
+.form-part-header {
+    position:relative;
+    .back-arrow-button, .done-button {
+        color:white;
+        position:absolute;
+        height:1em;
+        line-height:1em;
+        top:50%;
+        left:6vw;
+        margin-top:-.5em;
+        svg {
+            color:white;
+        }
+    }
+    .done-button {
+        left:auto;
+        right:6vw;
+        text-decoration:underline;
+    }
+}
