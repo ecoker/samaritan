@@ -13,7 +13,7 @@ export default class BasicInfo extends Component {
                 <div className="row">
                     <div className="small-10 columns">
                         <label htmlFor="firstName">First Name
-                            <input name="firstName" type="text" required pattern="[a-zA-Z]+" placeholder="Jane" />
+                            <input name="firstName" type="text" pattern="[a-zA-Z]+" placeholder="Jane" />
                         </label>
                     </div>
                     <div className="small-2 columns">
@@ -23,7 +23,7 @@ export default class BasicInfo extends Component {
                     </div>
                     <div className="small-12 columns">
                         <label htmlFor="lastName">Last Name
-                            <input name="lastName" type="text" required pattern="[a-zA-Z]+" placeholder="Doe" />
+                            <input name="lastName" type="text" pattern="[a-zA-Z]+" placeholder="Doe" />
                         </label>
                     </div>
                     <div className="small-6 columns">

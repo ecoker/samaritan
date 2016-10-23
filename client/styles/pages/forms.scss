@@ -81,7 +81,10 @@
    position:absolute;
    visibility:hidden;
 }
-
+.button.small-6 {
+    width:48%;
+    margin:4vh 0 20vh;
+}
 .Incrementer {
     &.adult .counter .icon {
         background: white url(/images/adult.svg) center no-repeat;
