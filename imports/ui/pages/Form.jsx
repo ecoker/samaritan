@@ -105,7 +105,7 @@ class Form extends Component {
     return (
       <div className="container">
         <div id="form-parts">
-          <ClientFormPart section="1" additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="Needs" content={ Needs } />
+          <ClientFormPart section="Needs" additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="Needs" content={ Needs } />
           <ClientFormPart section="2" handleStateChange={ this.handleStateFormStateChange } id="BasicInfo" content={ BasicInfo } />
           <VeteranSwitch section="3" handleSwitch={ this.handleSwitch } id="VeteranSwitch" />
           {

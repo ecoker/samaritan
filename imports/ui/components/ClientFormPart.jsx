@@ -53,7 +53,7 @@ export default class ClientFormPart extends Component {
         <form id={ this.props.id } className={`form-part ${ this.props.additionalClasses || '' }`} data-abide noValidate onSubmit={ this.handleSubmit }>
             <div className="form-part-header">
                 <a className="back-arrow-button" href="#" onClick={ this.handleBackClick }>{ BackArrow() }</a>
-                <p>Section {this.props.section}</p>
+                <p>{this.props.section}</p>
             </div>
             <div className="row column">
                 { this.props.handleSwitch ? <this.props.content handleSwitch={ this.props.handleSwitch } /> : <this.props.content /> } 
