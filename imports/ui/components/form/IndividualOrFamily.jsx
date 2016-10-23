@@ -62,9 +62,11 @@ export default class BasicInfo extends Component {
 }
   render(){
     return (
-      <div className="family">
-        <h1>Family Members: { this.state.Clicks }</h1>
-        <div className="row switch">
+      <div>
+            <h2 className="coach">
+            “Are you seeking individual help, or help for family members as well?”
+            </h2>
+        <div className="columns small-12 row switch">
             <a href="" className="button columns small-6">Individual</a>
             <a href="" className="button columns small-6">Family</a>
         </div>
@@ -76,3 +78,4 @@ export default class BasicInfo extends Component {
     )
   } 
 }
+

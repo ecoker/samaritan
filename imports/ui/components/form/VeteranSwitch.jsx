@@ -25,8 +25,11 @@ export default class Veteran extends Component {
                 <p>Form Part Header</p>
             </div>
             <h2 className="coach">"Have you served in the military?"</h2>
-            <button className="button" onClick={ this.switchOn }>Yes</button>
-            <button className="button" onClick={ this.switchOff }>No</button>
+            <div className="columns small-12 row switch">
+                <button className="button  columns small-6" onClick={ this.switchOn }>Yes</button>
+                <button className="button  columns small-6" onClick={ this.switchOff }>No</button>
+            </div>
+
         </div>
     );
   }
