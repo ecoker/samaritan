@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
+import { Shelters } from './../../api/shelters.js';
 import { Clients } from './../../api/clients.js';
 
 /*
@@ -9,11 +10,13 @@ import { Clients } from './../../api/clients.js';
 import Header from './../template/Header.jsx';
 import Footer from './../template/Footer.jsx';
 
+import ClientShelters from './../components/ClientShelters.jsx';
 
-class ClientPage extends Component {
+
+class ShelterPage extends Component {
   constructor(props){
       super(props);
-      this.renderClients = this.renderClients.bind(this);
+      this.renderClientShelters = this.renderClientShelters.bind(this);
   }
   cleanString(str) {
       if (str || typeof str == 'string') {
@@ -22,22 +25,12 @@ class ClientPage extends Component {
           return str;
       }
   }
-  renderClients(){
-    return this.props.clients.map((client) => (
-        <tr key={client._id}>
-            <td>{ this.cleanString( client.firstName ) } { this.cleanString( client.lastName ) }</td>
-            <td>{ this.cleanString( client.financialNeed ) }</td>
-        </tr>
-    ));
-  }
-  renderOne(){
-      this.props.one.forEach(function(client){
-          console.log( Object.keys(client) );
-      })
+  renderClientShelters(){
+    return this.props.client.map(function(client){
+        return <ClientShelters key={client._id} {...client} />
+    })
   }
   render() {
-      this.renderOne();
-      this.renderClients();
     return (
         <div className="container">
             <Header />
@@ -50,7 +43,7 @@ class ClientPage extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        { this.renderClients() }
+                        { this.renderClientShelters() }
                     </tbody>
                 </table>
             </div>
@@ -60,13 +53,12 @@ class ClientPage extends Component {
   }
 };
 
-ClientPage.propTypes = {
-  clients: PropTypes.array.isRequired,
+ShelterPage.propTypes = {
+  client: PropTypes.array.isRequired,
 };
  
-export default createContainer(() => {
-  return {
-    clients: Clients.find({}, { sort: { createdAt: -1 } }).fetch(),
-    one: Clients.find({_id:'RZETCREhrxAKY46JP'}).fetch()
+export default createContainer((props) => {
+    return {
+    client: Clients.find({_id:'RZETCREhrxAKY46JP'}).fetch()
   };
-}, ClientPage);
+}, ShelterPage);

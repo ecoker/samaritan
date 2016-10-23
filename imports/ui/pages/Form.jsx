@@ -20,6 +20,8 @@ import VeteranSwitch from './../components/form/VeteranSwitch.jsx';
 import MilitaryService from './../components/form/MilitaryService.jsx';
 import IndividualOrFamily from './../components/form/IndividualOrFamily.jsx';
 
+var visitedHash = [];
+
 class Form extends Component {
   constructor(props){
     super(props);
@@ -37,17 +39,47 @@ class Form extends Component {
     } else {
       window.location.hash = '';
     }
+    setTimeout(function(){
+       if (window.location.hash.length > 1) {
+           visitedHash.push( window.location.hash );
+       }
+   }, 200);
+
+   /* HASHTAG BINDING --- */
+   if (window.location.hash.length)
+   $(window).bind('hashchange', function() {
+       var $activeEl = $( window.location.hash );
+       if ($activeEl.length > 0) {
+           if (visitedHash.indexOf( window.location.hash ) > -1) {
+                $('body').addClass('back');
+                visitedHash = visitedHash.slice(0, visitedHash.indexOf('#military-service'))
+            } else {
+                $('body').removeClass('back');
+                visitedHash.push( window.location.hash );
+           }
+           $activeEl.addClass('active enter');
+           $inactiveEl = $activeEl.siblings('.active');
+           if ($inactiveEl.length > 0) {
+               $inactiveEl.removeClass('now').addClass('leave').removeClass('enter');
+               setTimeout(function(){
+                   $inactiveEl.removeClass('active leave');
+               }, 800);
+           }
+       }
+   });
   }
   
   handleStateFormStateChange(o, submitToDatabase=false) {
     // KEEP A STATE AT THE PARENT. THIS IS WHAT WILL GO TO THE DB
     this.setState( o );
     if (submitToDatabase) {
+      o.createdAt = new Date();
       var sendToServer = {
         ...this.state,
         ...o
       };
-      Clients.insert( sendToServer );
+      var newClient = Clients.insert( sendToServer );
+      console.log( newClient );
     }
   };
   

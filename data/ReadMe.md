@@ -21,3 +21,6 @@ servemengt18
 
 _MEN (Less than 18)_
 db.shelters.find({"acceptmales":"true"})
+
+_MEDICAL_
+db.shelters.find({"healthServices": "true"})
