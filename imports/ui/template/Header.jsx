@@ -11,8 +11,8 @@ export default class Header extends Component {
                     <ul className="dropdown menu" data-dropdown-menu>
                         <li className="menu-text">Samaritan</li>
                         <li><Link to="/">Home</Link></li>
+                        <li><Link to="register">Register</Link></li>
                         <li><Link to="about">About</Link></li>
-                        <li><Link to="clients">Clients</Link></li>
                     </ul>
                 </div>
             </div>

@@ -72,15 +72,15 @@ class Form extends Component {
     return (
       <div className="container">
         <div id="form-parts">
-          <ClientFormPart additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="Needs" content={ Needs } />
-          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="BasicInfo" content={ BasicInfo } />
-          <VeteranSwitch handleSwitch={ this.handleSwitch } id="VeteranSwitch" />
+          <ClientFormPart section="1" additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="Needs" content={ Needs } />
+          <ClientFormPart section="2" handleStateChange={ this.handleStateFormStateChange } id="BasicInfo" content={ BasicInfo } />
+          <VeteranSwitch section="3" handleSwitch={ this.handleSwitch } id="VeteranSwitch" />
           {
             this.state.isVeteran ?
-              ( <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="MilitaryService" content={ MilitaryService } /> )
+              ( <ClientFormPart section="4" handleStateChange={ this.handleStateFormStateChange } id="MilitaryService" content={ MilitaryService } /> )
               : null
           }          
-          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="individual-or-family" content={ IndividualOrFamily } submit={ true } />
+          <ClientFormPart section={ this.state.isVeteran ? '5' : '4' } handleStateChange={ this.handleStateFormStateChange } id="individual-or-family" content={ IndividualOrFamily } submit={ true } />
         </div>
         <Footer />
       </div>

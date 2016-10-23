@@ -32,7 +32,6 @@ export default class ClientFormPart extends Component {
     setTimeout(function(){
           if ($(el).find('[data-invalid]').length == 0 ) {
               var formObject = GetFormObject(el);
-              console.log('Current form object', formObject);
               _this.handleNext(el);
               if (_this.props.handleStateChange) {
                   _this.props.handleStateChange( formObject, (_this.props.submit || false) );
@@ -47,7 +46,7 @@ export default class ClientFormPart extends Component {
     return (
         <form id={ this.props.id } className={`form-part ${ this.props.additionalClasses || '' }`} data-abide noValidate onSubmit={ this.handleSubmit }>
             <div className="form-part-header">
-                <p>Form Part Header</p>
+                <p>Section {this.props.section}</p>
             </div>
             <div className="row column">
                 { this.props.handleSwitch ? <this.props.content handleSwitch={ this.props.handleSwitch } /> : <this.props.content /> } 
