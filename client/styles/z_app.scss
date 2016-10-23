@@ -1,6 +1,13 @@
+body * {
+    font-family: 'Montserrat', sans-serif;
+}
 table {
     font-size:.85em;
     margin-top:2em;
+}
+#form-parts section, .home section {
+    max-width:600px;
+    margin:0 auto;
 }
 .top-bar, .top-bar ul{
     background-color:#2099e8;
