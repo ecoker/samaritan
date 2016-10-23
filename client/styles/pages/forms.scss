@@ -4,14 +4,30 @@
         margin:2vh 0;
     }
 }
+.nowrap-table {
+    th, td {
+        white-space:nowrap;
 
+    }
+    .centered {
+        text-align:center;
+    }
+}
 .coach, .instructions, .screen1 {
     text-align:center;
 }
 .coach {
-    font-size:1.8em;
+    font-size:1.6em;
     margin:5vh 0 4vh;
+    color:#404547;
+    ~ p {
+        color:#404547;
+        text-align:center;
+    }
 } 
+.cta-wrapper {
+    margin-top:2em;
+}
 .instructions {
     font-size:1em
 }
@@ -24,7 +40,11 @@
    width:100%;
    max-height:200px;
 }
-
+.all-the-overflow {
+    max-width:100vw;
+    overflow:auto;
+    padding-right:0.9375rem;
+}
 .screen1 .needGroup {
    color:#999;
 }

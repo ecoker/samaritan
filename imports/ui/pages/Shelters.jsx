@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
+import { Link } from 'react-router';
 
 import { Shelters } from './../../api/shelters.js';
 import { Clients } from './../../api/clients.js';
@@ -34,7 +35,7 @@ class ShelterPage extends Component {
     return (
         <div className="container">
             <div className="form-part-header">
-                <a className="done-button" href="#" onClick={ this.handleDoneClick }>Done</a>
+                <Link to="samaritan" className="done-button">Done</Link>
                 <p>Section {this.props.section}</p>
             </div>
             <div className="row column">

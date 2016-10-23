@@ -3,10 +3,6 @@ import { createContainer } from 'meteor/react-meteor-data';
  
 import { Clients } from './../../api/clients.js'; 
 
-/* TEMPLATE SECTIONS ---- */
-import Header from './../template/Header.jsx';
-import Footer from './../template/Footer.jsx';
-
 /* SVG ---- */
 import samaritanLogo from './../svg/samaritanLogo.jsx';
 
@@ -32,7 +28,6 @@ class Home extends Component {
   render() {
     return (
       <div className="container home">
-        <Header />
         <div>
             <div className="row column text-center">
                 <svg className="logo" viewBox="0 0 45 50" >
