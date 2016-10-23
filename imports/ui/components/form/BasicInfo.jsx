@@ -33,7 +33,7 @@ export default class BasicInfo extends Component {
                     </div>
                     <div className="small-6 columns">
                         <label htmlFor="dateOfBirth">Date of Birth
-                            <input name="dateOfBirth" type="date" pattern="[\d]{2}\/[\d]{2}\/[\d]{4}\/" placeholder="MM/DD/YYYY" />
+                            <input name="dateOfBirth" type="date" pattern="[\d{2}.*\d{2}.*\d{4}]" placeholder="MM/DD/YYYY" />
                         </label>
                     </div>
                     <fieldset className="columns small-12">

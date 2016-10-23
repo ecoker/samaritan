@@ -13,7 +13,7 @@ export default class ClientFormPart extends Component {
           $firstInput.focus();
       }
   }
-  handleNext(el ) {
+  handleNext(el) {
     var $current = $(el).closest('.form-part');
     var $next = $current.next('.form-part');
     if ($next.length > 0) {
@@ -34,7 +34,9 @@ export default class ClientFormPart extends Component {
               var formObject = GetFormObject(el);
               console.log('Current form object', formObject);
               _this.handleNext(el);
-              _this.props.handleStateChange( formObject, (_this.props.submit || false) );    
+              if (_this.props.handleStateChange) {
+                  _this.props.handleStateChange( formObject, (_this.props.submit || false) );
+              }    
           } else {
             console.log('Form not valid');
           }
@@ -44,8 +46,11 @@ export default class ClientFormPart extends Component {
   render() {
     return (
         <form id={ this.props.id } className={`form-part ${ this.props.additionalClasses || '' }`} data-abide noValidate onSubmit={ this.handleSubmit }>
+            <div className="form-part-header">
+                <p>Form Part Header</p>
+            </div>
             <div className="row column">
-                <this.props.content />
+                { this.props.handleSwitch ? <this.props.content handleSwitch={ this.props.handleSwitch } /> : <this.props.content /> } 
             </div>
             <div className="row column">
                 {

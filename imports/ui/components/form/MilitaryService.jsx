@@ -19,7 +19,7 @@ export default class BasicInfo extends Component {
                 <div className="small-12 columns">
                     <label htmlFor="veteranOf">Veteran Of
                         <select name="veteranOf">
-                            <option value=""></option>
+                            <option value="">Select One</option>
                             <option value="WorldWarII">World War II</option>
                             <option value="KoreanWar">Korean War</option>
                             <option value="VietnamWar">Vietnam War</option>
@@ -34,7 +34,7 @@ export default class BasicInfo extends Component {
                 <div className="small-12 columns">
                     <label htmlFor="veteranOf">Disharge Status
                         <select name="veteranOf">
-                            <option value="0"></option>
+                            <option value="0">Select One</option>
                             <option value="1">Honorable Discharge</option>
                             <option value="2">Other Than Honorable Conditions Discharge</option>
                             <option value="3">Bad Conduct Discharge (BCD)</option>

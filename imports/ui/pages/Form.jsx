@@ -16,6 +16,7 @@ import ClientFormPart from './../components/ClientFormPart.jsx';
 /* FORM PARTS ---- */
 import Needs from './../components/form/Needs.jsx';
 import BasicInfo from './../components/form/BasicInfo.jsx';
+import VeteranSwitch from './../components/form/VeteranSwitch.jsx';
 import MilitaryService from './../components/form/MilitaryService.jsx';
 import IndividualOrFamily from './../components/form/IndividualOrFamily.jsx';
 
@@ -23,9 +24,10 @@ class Form extends Component {
   constructor(props){
     super(props);
     this.state = {};
+    this.handleSwitch = this.handleSwitch.bind(this);
     this.handleStateFormStateChange = this.handleStateFormStateChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
+  
   componentDidMount(){
     var $firstFormPart = $('.form-part').first();
     var firstId = $firstFormPart.attr('id');
@@ -36,6 +38,7 @@ class Form extends Component {
       window.location.hash = '';
     }
   }
+  
   handleStateFormStateChange(o, submitToDatabase=false) {
     // KEEP A STATE AT THE PARENT. THIS IS WHAT WILL GO TO THE DB
     this.setState( o );
@@ -47,20 +50,36 @@ class Form extends Component {
       Clients.insert( sendToServer );
     }
   }
-  handleSubmit(ev){
-      if (typeof ev !== 'undefined') ev.preventDefault();
-      console.log('send to server:', this.state);
+  
+  handleSwitch(switchObject, el) {
+    this.setState( switchObject );
+    var $current = $(el).closest('.form-part');
+    var _this = this;
+    setTimeout(function(){
+      var $next = $current.next('.form-part');
+      if ($next.length > 0) {
+          if ($next.attr('id')) {
+              window.location.hash = `#${ $next.attr('id') }`;
+          } else {
+              $next.addClass('active enter');
+              $current.addClass('leave').removeClass('enter');
+          }
+      }
+    }, 200);
   }
  
   render() {
     return (
       <div className="container">
-        <Header />
-        <ClientFormNavigation />
         <div id="form-parts">
-          <ClientFormPart additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="Needs" content={ Needs } submit={ true } />
-          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="BasicInfo" content={ BasicInfo } submit={ true } />
-          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="MilitaryService" content={ MilitaryService } submit={ true } />
+          <ClientFormPart additionalClasses="active now" handleStateChange={ this.handleStateFormStateChange } id="Needs" content={ Needs } />
+          <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="BasicInfo" content={ BasicInfo } />
+          <VeteranSwitch handleSwitch={ this.handleSwitch } id="VeteranSwitch" />
+          {
+            this.state.isVeteran ?
+              ( <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="MilitaryService" content={ MilitaryService } /> )
+              : null
+          }          
           <ClientFormPart handleStateChange={ this.handleStateFormStateChange } id="individual-or-family" content={ IndividualOrFamily } submit={ true } />
         </div>
         <Footer />

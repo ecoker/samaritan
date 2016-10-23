@@ -13,7 +13,6 @@ export default class Header extends Component {
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="about">About</Link></li>
                         <li><Link to="clients">Clients</Link></li>
-                        <li><Link to="nomatch">No Match</Link></li>
                     </ul>
                 </div>
             </div>
