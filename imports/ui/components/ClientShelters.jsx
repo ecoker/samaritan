@@ -65,8 +65,6 @@ export default createContainer((props) => {
         query.push({"healthServices": "true"});
     }
 
-    console.log( query );
-
   return {
     matchedShelters: Shelters.find({ $or: query}).fetch()
   };
