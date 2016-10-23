@@ -28,10 +28,12 @@
 .screen1 .needGroup {
    color:#999;
 }
-
-.screen1 .needGroup path {
-   stroke:#cccccc;
-   fill:#f1f1f1;
+.screen1 .iconCircle {
+    fill:#f4f4f4;
+    stroke: #d7d7d7;
+}
+.screen1 .needGroup .icon {
+   fill:#45bbff;
 }
 
 .screen1 {
@@ -50,9 +52,11 @@
    
 }
 
-.screen1 :checked + label path {
-    stroke:#333;
-}
+// .screen1 :checked + label .iconCircle {     
+//     fill:#d4d4d4;
+//     stroke: #d7d7d7; 
+// }
+.screen1 :checked + label .iconCircle { fill:#b4e4ff }
 
 
 .screen2  {
@@ -79,6 +83,14 @@
 }
 
 .Incrementer {
+    &.adult .counter .icon {
+        background: white url(/images/adult.svg) center no-repeat;
+        background-size: 32%;
+    }
+    &.child .counter .icon {
+        background: white url(/images/child.svg) center no-repeat;
+        background-size: 28%;
+    }
     display:flex;
     flex-flow:column;
     align-items:center;
