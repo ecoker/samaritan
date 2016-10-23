@@ -20,9 +20,9 @@ class Home extends Component {
     return (
       <div className="container home">
         <Header />
-        <div className="main-callout">
+        <div>
             <div className="row column text-center">
-                <svg width="45px" height="50px" viewBox="0 0 45 50" >
+                <svg className="logo" viewBox="0 0 45 50" >
                     <g id="Exploration" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                         <g id="Home" transform="translate(-165.000000, -83.000000)" fill="#FFFFFF">
                             <g id="Group-8" transform="translate(165.000000, 83.000000)">
@@ -30,8 +30,32 @@ class Home extends Component {
                             </g>
                         </g>
                     </g>
-                    </svg>
+                </svg>
                 <h1>You can be the Good Samaritan</h1>
+                <section className="signup">
+                  <h3>Get started today!</h3>
+                  <form>
+                    <p>Enter your email address associated with your organization</p>
+                    <label htmlFor="email">
+                      Email
+                      <input type="email" name="email" />
+                      <a href="" className="button expanded">Get Started</a>
+                    </label>
+                  </form>
+                </section>
+                <section className="partners">
+                  <h2>Our Partners</h2>
+                  <img src="/images/mercy.png" className="small-5" />
+                  <div className="row">
+                    <img src="/images/stlPL.png" className="small-4 " />
+                    <img src="/images/SLPS.png" className="small-3 " />
+                  </div>
+                  <img src="/images/SLPD.png" className="small-2" />
+                  <img src="/images/saintPatrickCenter.png" className="small-3" />
+                </section>
+                <section className="about">
+                Samaritan is a national program that supports the community by matching an individual's needs with supportive programs and housing. Displaying a blue and white Samaritan sign at trusted community locations symbolizes a safe and non-judgmental place to seek help. Locations include hospitals, libraries, shelters, police stations, religious organizations and local schools and colleges. Whether you are in fear of becoming homeless or are already part of the homeless community, a Samaritan organization is always open to help.
+                </section>
             </div>
         </div>
       </div>

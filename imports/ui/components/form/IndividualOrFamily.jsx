@@ -66,10 +66,13 @@ export default class BasicInfo extends Component {
             <h2 className="coach">
             “Are you seeking individual help, or help for family members as well?”
             </h2>
-        <div className="columns small-12 row switch">
+        
+        {
+          false ? (<div className="columns small-12 row switch">
             <a href="" className="button columns small-6">Individual</a>
             <a href="" className="button columns small-6">Family</a>
-        </div>
+         </div>) : ''
+        }
         <div className="row">
             <Incrementer name="adultCount" initialCount="1" label="Adults" additionalClasses="adult columns small-6" handleClicks={ this.handleClicks } />
             <Incrementer name="childCount" initialCount="0" label="Children" additionalClasses="child columns small-6" handleClicks={ this.handleClicks } />
