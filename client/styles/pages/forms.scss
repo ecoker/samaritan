@@ -205,7 +205,11 @@
     .phoneLink {
         margin:1em;
         min-width:15%;
+        .icon {
+            max-width:100px;
+        }
     }
+
 }
 .printList {
     position:fixed;
