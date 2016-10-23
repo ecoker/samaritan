@@ -78,3 +78,55 @@
    visibility:hidden;
 }
 
+.Incrementer {
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    .counter {
+        display:flex;
+        align-items:center;
+        .icon {
+            width:5em;
+            height:5em;
+            display:block;
+            border-radius:100%;
+            margin:0 -.5em;
+            position:relative;
+            background:#fff;
+            border:.3em solid #eee;
+        }
+        .increment {
+            padding:.5em .5em .7em;
+            background:#eee;
+            font-size:1.5em;
+            line-height:.3em;
+            font-weight:bold;
+            &.sub { 
+                padding-right:.6em;
+                padding-left:.6em; 
+                border-radius:5em 0 0 5em;
+            }
+            &.add { 
+                padding-left:.5em; 
+                border-radius:0 5em 5em 0;
+            }
+        }
+    }
+    .family {
+        .switch .button {
+            margin:.2em;
+        }
+    }
+    input {
+        &, &:active, &[readonly], &:disabled, &:focus {
+            background:none;
+            border:none;
+            box-shadow:none;
+            outline:none;
+            cursor:default;
+            text-align:center;
+            width:6em;
+            padding:0;margin:0 0 0 1em;
+        }
+    }
+}
