@@ -38,15 +38,16 @@ export default class BasicInfo extends Component {
                     </div>
                     <fieldset className="columns small-12">
                         <legend>Gender</legend> 
-                        <label htmlFor="genderMale" className="columns medium-4">
+                        <label htmlFor="genderMale" className="columns small-3">
                             <input type="radio" name="gender" value="male" id="genderMale" /> Male
                         </label>
-                        <label htmlFor="genderFemale" className="columns medium-4">
+                        <label htmlFor="genderFemale" className="columns small-3">
                             <input type="radio" name="gender" value="female" id="genderFemale" /> Female
                         </label>
-                        <label htmlFor="genderCustom" className="columns medium-4">
+                        <label htmlFor="genderCustom" className="columns small-3">
                             <input type="radio" name="gender" value="custom" id="genderCustom" /> Custom
                         </label>
+                        <div className="columns small-3"></div>
                     </fieldset>
                 </div>
             </section>
