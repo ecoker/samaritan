@@ -8,12 +8,12 @@ export default class BasicInfo extends Component {
             <div className="row">
                 <div className="small-6 columns">
                     <label htmlFor="serviceStart">Service Start
-                        <input name="serviceStart" type="text" pattern="[\d]{4}" placeholder="YYYY" />
+                        <input name="serviceStart" type="number" pattern="[\d]{4}" placeholder="YYYY" />
                     </label>
                 </div>
                 <div className="small-6 columns">
                     <label htmlFor="serviceEnd">Service End
-                        <input name="serviceEnd" type="text" pattern="[\d]{4}" placeholder="YYYY" />
+                        <input name="serviceEnd" type="number" pattern="[\d]{4}" placeholder="YYYY" />
                     </label>
                 </div>
                 <div className="small-12 columns">
