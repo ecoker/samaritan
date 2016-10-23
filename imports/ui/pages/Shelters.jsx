@@ -36,7 +36,7 @@ class ShelterPage extends Component {
         <div className="container">
             <div className="form-part-header">
                 <Link to="samaritan" className="done-button">Done</Link>
-                <p>Section {this.props.section}</p>
+                <p>Resources</p>
             </div>
             <div className="row column">
                 { this.renderClientShelters() }
