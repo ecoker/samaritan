@@ -22,7 +22,7 @@ export default class Veteran extends Component {
     return (
         <div id={ this.props.id } className={`form-part ${ this.props.additionalClasses || '' }`}>
             <div className="form-part-header">
-                <p>Form Part Header</p>
+                <p>Veteran</p>
             </div>
             <h2 className="coach">"Have you served in the military?"</h2>
             <div className="columns small-12 row switch">
